@@ -1,0 +1,14 @@
+# Python environment
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Raw downloads (see README: "Rebuilding the data")
+data/raw/
+
+# Browser test artifacts
+.playwright/
+.playwright-cli/
+.playwright-mcp/
+
+# node_modules and dist are in web/.gitignore

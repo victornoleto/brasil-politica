@@ -1,0 +1,106 @@
+@import 'tailwindcss';
+
+/* Design tokens. `static` emits every variable even when no utility uses it:
+   lib/colors.js reads them at runtime to paint the ECharts charts. */
+@theme static {
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --color-page: #f9f9f7;
+  --color-surface: #fcfcfb;
+  --color-ink: #0b0b0b;
+  --color-ink-2: #52514e;
+  --color-muted: #898781;
+  --color-grid: #e1e0d9;
+  --color-axis: #c3c2b7;
+  --color-line: rgba(11, 11, 11, 0.1);
+  --color-accent: #2a78d6;
+  --color-pole-left: #e34948;
+  --color-pole-right: #2a78d6;
+  --color-pole-mid: #f0efec;
+  --color-q-auth-left: #f7e4e3;
+  --color-q-auth-right: #e3ecf8;
+  --color-q-lib-left: #e4f1e4;
+  --color-q-lib-right: #f8eee0;
+  --color-bubble: #c9c7c0;
+  --color-bubble-border: #7d7b75;
+  --color-series-1: #2a78d6;
+  --color-series-2: #eb6834;
+  --color-series-3: #1baf7a;
+  --color-series-4: #eda100;
+  --color-series-5: #e87ba4;
+  --color-series-6: #008300;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  /* Utilities read the tokens through var(), so redefining them here switches the whole theme. */
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+    --color-page: #0d0d0d;
+    --color-surface: #1a1a19;
+    --color-ink: #ffffff;
+    --color-ink-2: #c3c2b7;
+    --color-muted: #898781;
+    --color-grid: #2c2c2a;
+    --color-axis: #383835;
+    --color-line: rgba(255, 255, 255, 0.1);
+    --color-accent: #3987e5;
+    --color-pole-left: #e66767;
+    --color-pole-right: #3987e5;
+    --color-pole-mid: #383835;
+    --color-q-auth-left: #3a2325;
+    --color-q-auth-right: #1c2638;
+    --color-q-lib-left: #1f2d20;
+    --color-q-lib-right: #33291d;
+    --color-bubble: #5a5955;
+    --color-bubble-border: #a09e97;
+    --color-series-1: #3987e5;
+    --color-series-2: #d95926;
+    --color-series-3: #199e70;
+    --color-series-4: #c98500;
+    --color-series-5: #d55181;
+    --color-series-6: #008300;
+  }
+
+  body {
+    @apply bg-page text-ink;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  a {
+    @apply text-accent underline;
+  }
+  button {
+    @apply cursor-pointer rounded-md border border-line bg-surface px-3 py-1.5 text-ink hover:border-accent;
+  }
+
+  /* Headings: H1 = site · H2 = tab · H3 = card (H4 = subtitle inside a card) */
+  h1 {
+    @apply text-[1.6rem] font-bold;
+  }
+  h2 {
+    @apply text-[1.35rem] font-semibold;
+  }
+  h3 {
+    @apply mb-1 flex items-center text-[1.05rem] font-semibold;
+  }
+  h4 {
+    @apply font-semibold;
+  }
+
+  table {
+    @apply w-full tabular-nums;
+  }
+  th,
+  td {
+    @apply border-b border-grid px-1.5 py-1 text-left;
+  }
+  th {
+    @apply text-sm font-semibold text-ink-2;
+  }
+}
+
+@utility card {
+  @apply min-w-0 rounded-lg border border-line bg-surface p-4;
+}

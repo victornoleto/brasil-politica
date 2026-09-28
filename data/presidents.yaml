@@ -1,0 +1,41 @@
+# Presidents 1994–2026. One item per continuous period with the same party.
+# end: last day in office (inclusive). null = currently in office.
+# reference_party: used when party is null (period without a party); REVIEW.
+- name: Itamar Franco
+  start: 1992-12-29
+  end: 1994-12-31
+  party: null            # no party while President (left PRN in 1992) — TO CONFIRM
+  reference_party: PMDB
+- name: Fernando Henrique Cardoso
+  start: 1995-01-01
+  end: 2002-12-31
+  party: PSDB
+- name: Luiz Inácio Lula da Silva
+  start: 2003-01-01
+  end: 2010-12-31
+  party: PT
+- name: Dilma Rousseff
+  start: 2011-01-01
+  end: 2016-05-11        # suspended on 2016-05-12; impeached on 2016-08-31
+  party: PT
+- name: Michel Temer
+  start: 2016-05-12      # acting president until 2016-08-31, president afterwards
+  end: 2018-12-31
+  party: PMDB            # renamed MDB in 2017 (handled in aliases.yaml)
+- name: Jair Bolsonaro
+  start: 2019-01-01
+  end: 2019-11-19
+  party: PSL
+- name: Jair Bolsonaro
+  start: 2019-11-20
+  end: 2021-11-29
+  party: null            # no party after leaving PSL
+  reference_party: PL    # decided: counts as PL, the party he joined in 2021
+- name: Jair Bolsonaro
+  start: 2021-11-30
+  end: 2022-12-31
+  party: PL
+- name: Luiz Inácio Lula da Silva
+  start: 2023-01-01
+  end: null
+  party: PT

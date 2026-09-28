@@ -1,0 +1,35 @@
+# Maps the raw party acronym (as it comes from Câmara/Senado/TSE) -> canonical id used in parties.yaml.
+# Renames of the SAME party map to the same id. Mergers/incorporations do NOT rewrite the past:
+# a PFL deputy in 2005 still counts as PFL/DEM, not as União.
+# The asterisks come from the Câmara API, to tell apart homonyms from different eras.
+aliases:
+  PMDB: MDB
+  PFL: DEM
+  PPS: CIDADANIA
+  PCB***: CIDADANIA      # PCB -> PPS (1992)
+  PRB: REPUBLICANOS
+  PR: PL                 # PL* + PRONA -> PR (2006) -> PL (2019)
+  PL*: PL
+  PTN: PODE
+  PTdoB: AVANTE
+  PSDC: DC
+  SD: SOLIDARIEDADE
+  SDD: SOLIDARIEDADE
+  PEN: PATRIOTA
+  PATRI: PATRIOTA
+  PDS: PP
+  PPR: PP
+  PPB: PP
+  PP**: PP
+  PP***: PP
+  PSD*: PSD_1987         # PSD 1987–2003, unrelated to the PSD founded in 2011
+  PDC*: PDC
+  PRN: PTC               # PRN -> PTC (2000) -> Agir (2022)
+  PC do B: PCdoB        # TSE spellings
+  PC DO B: PCdoB
+  PT do B: AVANTE
+  AGIR: PTC              # PTC -> Agir (2022)
+  PTRB: PRTB             # typo in the TSE file
+  PSN: PHS               # PSN -> PHS (2000)
+  S.PART.: NO_PARTY
+  S/Partido: NO_PARTY
